@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="af5fbe8d-c9b4-4af0-9f41-60aec8cdf163" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/File.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/File.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Zad1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Zad1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Zad2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Zad2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Zad5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Zad5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/File.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad6.java" beforeDir="false" />
+    <list default="true" id="af5fbe8d-c9b4-4af0-9f41-60aec8cdf163" name="Changes" comment="1,2,3,5,6,7 -finished">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Zad8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Zad8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zad8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zad8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +46,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Zad7">
+  <component name="RunManager" selected="Application.Zad8">
     <configuration name="Zad1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Zad1" />
       <module name="Lab1" />
@@ -67,8 +61,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Zad8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Zad8" />
+      <module name="Lab1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Zad8" />
         <item itemvalue="Application.Zad7" />
         <item itemvalue="Application.Zad1" />
       </list>
@@ -83,6 +85,14 @@
       <option name="presentableId" value="Default" />
       <updated>1647363430606</updated>
     </task>
+    <task id="LOCAL-00001" summary="1,2,3,5,6,7 -finished">
+      <created>1648028617553</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648028617553</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,5 +105,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1,2,3,5,6,7 -finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="1,2,3,5,6,7 -finished" />
   </component>
 </project>
