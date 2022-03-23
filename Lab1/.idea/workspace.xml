@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af5fbe8d-c9b4-4af0-9f41-60aec8cdf163" name="Changes" comment="1,2,3,5,6,7 -finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Zad8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/Zad8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zad8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zad8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zad4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zad4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +43,16 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Zad8">
+  <component name="RunManager" selected="Application.Zad4">
     <configuration name="Zad1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Zad1" />
+      <module name="Lab1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Zad4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Zad4" />
       <module name="Lab1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -70,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Zad4" />
         <item itemvalue="Application.Zad8" />
         <item itemvalue="Application.Zad7" />
         <item itemvalue="Application.Zad1" />
