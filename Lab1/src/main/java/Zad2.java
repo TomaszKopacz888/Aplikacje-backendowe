@@ -8,9 +8,9 @@ public class Zad2 {
                 new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
         String str = br.readLine();
+
        bw.write(str);
        bw.close();
 
     }
-
 }

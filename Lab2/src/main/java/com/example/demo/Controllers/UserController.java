@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.Controllers;
 
 import com.example.demo.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
