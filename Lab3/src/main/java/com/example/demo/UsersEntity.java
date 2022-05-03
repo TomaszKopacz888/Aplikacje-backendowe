@@ -1,7 +1,11 @@
 package com.example.demo;
 
 import org.apache.catalina.User;
-
+//
+//{"id":0,"name":"Scott","email":"scott442@gmail.com"}
+//{"id":1,"name":"Matt","email":"matt1@mail.pl"}
+//{"id":2,"name":"Thomas","email":"thomas1@mail.pl"}
+//{"id":3,"name":"Mark","email":"mark1@mail.pl"}
 public class UsersEntity {
     private int id=0;
     private String name;

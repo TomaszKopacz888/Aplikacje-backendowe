@@ -3,6 +3,9 @@ package com.example.demo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.catalina.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -34,11 +37,11 @@ public class UsersService {
             String line=br.readLine();
             while (line!=null){
                 UsersEntity user=stringToUserEntity(line);
-                this.users.add(this.id, user);
-                this.id++;
+                this.users.add(user.getId(), user);
+                this.id=user.getId();
                 line=br.readLine();
             }
-
+            this.id++;
     }
 
     @PreDestroy
@@ -46,10 +49,10 @@ public class UsersService {
 
         FileOutputStream fos = new FileOutputStream("src/main/java/com/example/demo/users.txt");
         BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(fos));
-        for (int i=0; i<this.id;i++){
-            UsersEntity user=this.users.get(i);
-            String line=userEntityToString(user);
-            bw.write(line);
+
+        for (UsersEntity user:this.users
+             ) {
+            bw.write(userEntityToString(user));
             bw.newLine();
         }
         bw.close();
@@ -71,9 +74,16 @@ public class UsersService {
     public Object getUserById(int id) {
         if (this.users.get(id)!=null) {
             return this.users.get(id);
-        } else return "There is no user id: " + id;
+        } else return "There is no user id: "+id;
 
     }
+
+//    public ResponseEntity<UsersEntity> getUserById(int id){
+//        if (this.users.get(id)!=null) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//        }
+//        else return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(this.users.get(id));
+//    }
 
     public Object addUser(UsersEntity user){
         user.setId(this.id);
