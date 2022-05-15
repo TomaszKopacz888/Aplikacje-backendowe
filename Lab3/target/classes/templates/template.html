@@ -1,0 +1,38 @@
+
+
+<form action="" method="post">
+    <label for="id" >Id:</label>
+    <input type="text" name="id" id="id">
+    <label for="name2"  id="name2">Name:</label>
+    <input type="text" name="name2">
+    <label for="email2">email:</label>
+    <input type="text" name="email2"  id="email2">
+</form>
+<button>Update user</button>
+<script>
+    async function createUser()
+{
+const requestUrl = '/api/user/create';
+
+const id=document.getElementById("id").value;
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+
+
+const requestData = {
+name:name,
+email:email
+};
+
+const response = await fetch(requestUrl, {
+method: 'POST',
+headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+},
+body: JSON.stringify(requestData)
+});
+
+const responseData = await response.json();
+}
+</script>
