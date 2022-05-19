@@ -1,9 +1,9 @@
 Aplikacja do zarządzania wydarzeniami kulturalnymi (Koncerty, imprezy plenerowe itd)
 Do przygotowania
 
-1. Szablon projektu Spring Boot
-2. Serwer bazy danych mysql
-3. Tabele w bazach danych:
+1. Szablon projektu Spring Boot   +
+2. Serwer bazy danych mysql +
+3. Tabele w bazach danych: +
     a) Tabela users zawierająca dane użytkowników:
     --id --PK
     --login

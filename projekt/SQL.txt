@@ -1,0 +1,21 @@
+CREATE DATABASE myProject;
+
+user myProject;
+
+CREATE TABLE cities(
+    city varchar(30),
+    PRIMARY KEY (city))
+
+CREATE TABLE users(
+    id int UNIQUE AUTO_INCREMENT,
+    login varchar(30) UNIQUE,
+    email varchar(50) UNIQUE,
+    password varchar(100),
+    name varchar (30),
+    surname varchar (50),
+    dateOfBirth date,
+    city varchar(30),
+    PRIMARY KEY (id),
+    FOREIGN KEY (city) REFERENCES cities(city)
+    )
+
