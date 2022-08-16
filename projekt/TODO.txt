@@ -18,6 +18,7 @@ Do przygotowania
     --city
     c) Tabla party
     --id PK
+    --user FK
     --type FK
     --title
     --date and time
@@ -28,7 +29,7 @@ Do przygotowania
     d) Tabela typesOfParty
     --type
 4. REST API do zarządzania użytkownikami
-5. ORM Hibernate do obsługi baz danych mysql
+5. ORM Hibernate jpa do obsługi baz danych mysql
 6. Entities i repositories potrzebnych w projektcie
 7. System rejestracji użytkowników
 8. System logowania użytkowników

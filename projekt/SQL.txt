@@ -1,21 +1,35 @@
-CREATE DATABASE myProject;
+CREATE DATABASE backendProject;
 
-user myProject;
+use backendProject;
 
 CREATE TABLE cities(
-    city varchar(30),
-    PRIMARY KEY (city))
+    city varchar(30) UNIQUE PRIMARY KEY
+    );
 
 CREATE TABLE users(
-    id int UNIQUE AUTO_INCREMENT,
-    login varchar(30) UNIQUE,
-    email varchar(50) UNIQUE,
-    password varchar(100),
+    id int AUTO_INCREMENT PRIMARY KEY,
+    login varchar(30) UNIQUE NOT NULL,
+    email varchar(50) UNIQUE NOT NULL,
+    password varchar(100) NOT NULL,
     name varchar (30),
     surname varchar (50),
-    dateOfBirth date,
-    city varchar(30),
-    PRIMARY KEY (id),
-    FOREIGN KEY (city) REFERENCES cities(city)
-    )
+    dateOfBirth date NOT NULL
+    );
 
+CREATE TABLE typesOfParty(
+    type varchar(30) UNIQUE
+    );
+
+CREATE TABLE parties(
+    id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    type varchar(30),
+    title varchar(100) UNIQUE,
+    userId INT UNSIGNED,
+    dateAndTime datetime,
+    description varchar(250),
+    picturesSrc varchar(250),
+    city varchar(30),
+    address varchar(100),
+    FOREIGN KEY (type) REFERENCES typesOfParty(type),
+    FOREIGN KEY (city) REFERENCES cities(city)
+    );
