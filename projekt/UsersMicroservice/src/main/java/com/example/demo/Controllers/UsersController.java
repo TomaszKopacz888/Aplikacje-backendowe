@@ -18,8 +18,6 @@ import java.util.Optional;
 public class UsersController {
 
     @Autowired
-    private UserService service;
-    @Autowired
     private UserRepository repository;
 
     @PostMapping(value = "/create",
