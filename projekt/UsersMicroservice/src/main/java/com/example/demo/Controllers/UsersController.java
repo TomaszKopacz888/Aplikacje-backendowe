@@ -1,16 +1,17 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Entities.UserEntity;
+import com.example.demo.Entities.UserLoginRequest;
+import com.example.demo.Entities.UserLoginResponse;
+import com.example.demo.Exceptions.NoUserException;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,6 +20,8 @@ public class UsersController {
 
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private UserService service;
 
     @PostMapping(value = "/create",
             consumes = MediaType.APPLICATION_JSON_VALUE,
@@ -26,6 +29,18 @@ public class UsersController {
     )
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity user) {
         return ResponseEntity.ok(this.repository.save(user));
+    }
+    //curl -X POST -H "Content-Type: application/json" -d '{"email":"example@email.com", "password":"password"}' http://127.0.0.1:8082/users/getIdByEmailAndPassword
+    @PostMapping(value = "/getIdByEmailAndPassword")
+
+        public long createUser(@RequestBody UserLoginRequest data) throws NoUserException {
+            try {
+
+                return service.getUsersIdByEmailAndPassword(data);
+            }
+            catch (Exception e){
+                throw new NoUserException();
+            }
     }
 
     @GetMapping(
@@ -47,7 +62,6 @@ public class UsersController {
         if (foundUserOptional.isPresent()){
             UserEntity foundUserEntity=foundUserOptional.get();
             if (user.getEmail()!=null) foundUserEntity.setEmail(user.getEmail());
-            if (user.getLogin()!=null) foundUserEntity.setLogin((user.getLogin()));
             if (user.getPassword()!=null) foundUserEntity.setPassword(user.getPassword());
             if (user.getName()!=null) foundUserEntity.setName(user.getName());
             if (user.getSurname()!=null) foundUserEntity.setSurname(user.getSurname());
@@ -55,6 +69,4 @@ public class UsersController {
         }
         return ResponseEntity.of(foundUserOptional);
     }
-
-
 }

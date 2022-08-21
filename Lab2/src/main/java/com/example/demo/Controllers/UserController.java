@@ -14,7 +14,6 @@ public class UserController {
     @Autowired
     private UsersService usersService;
 
-
     @RequestMapping("/users")
     @ResponseBody
     public Object getUsers() {

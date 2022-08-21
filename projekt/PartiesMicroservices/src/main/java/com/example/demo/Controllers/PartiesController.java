@@ -33,7 +33,7 @@ public class PartiesController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Transactional(readOnly = true)
-    public ResponseEntity<List<PartyEntity>> getAll(){
+    public ResponseEntity<List<PartyEntity>> getAll() {
         return ResponseEntity.ok(this.partiesRepository.findAll());
     }
 
@@ -42,7 +42,7 @@ public class PartiesController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<PartyEntity> createParty(@RequestBody PartyEntity party){
+    public ResponseEntity<PartyEntity> createParty(@RequestBody PartyEntity party) {
         return ResponseEntity.ok(this.partiesRepository.save(party));
     }
 
@@ -51,14 +51,14 @@ public class PartiesController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<PartyEntity> updateParty(@PathVariable("id") Long id, @RequestBody PartyEntity party){
-        Optional<PartyEntity> foundPartyOptional=this.partiesRepository.findById(id);
-        if (foundPartyOptional.isPresent()){
-            PartyEntity foundPartyEntity=foundPartyOptional.get();
-            if (party.getTitle()!=null) foundPartyEntity.setTitle(party.getTitle());
-            if (party.getDescription()!=null) foundPartyEntity.setDescription((party.getDescription()));
-            if (party.getPictures()!=null) foundPartyEntity.setPictures(party.getPictures());
-            if (party.getAddress()!=null) foundPartyEntity.setAddress(party.getAddress());
+    public ResponseEntity<PartyEntity> updateParty(@PathVariable("id") Long id, @RequestBody PartyEntity party) {
+        Optional<PartyEntity> foundPartyOptional = this.partiesRepository.findById(id);
+        if (foundPartyOptional.isPresent()) {
+            PartyEntity foundPartyEntity = foundPartyOptional.get();
+            if (party.getTitle() != null) foundPartyEntity.setTitle(party.getTitle());
+            if (party.getDescription() != null) foundPartyEntity.setDescription((party.getDescription()));
+            if (party.getPictures() != null) foundPartyEntity.setPictures(party.getPictures());
+            if (party.getAddress() != null) foundPartyEntity.setAddress(party.getAddress());
         }
         return ResponseEntity.of(foundPartyOptional);
     }

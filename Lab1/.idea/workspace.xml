@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af5fbe8d-c9b4-4af0-9f41-60aec8cdf163" name="Changes" comment="1,2,3,5,6,7 -finished" />
+    <list default="true" id="af5fbe8d-c9b4-4af0-9f41-60aec8cdf163" name="Changes" comment="1,2,3,5,6,7 -finished">
+      <change beforePath="$PROJECT_DIR$/../projekt/PartiesMicroservices/src/main/java/com/example/demo/Controllers/PartiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/PartiesMicroservices/src/main/java/com/example/demo/Controllers/PartiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/PartiesMicroservices/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/PartiesMicroservices/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/PartiesMicroservices/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/PartiesMicroservices/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/PartiesMicroservices/target/classes/com/example/demo/Controllers/PartiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/PartiesMicroservices/target/classes/com/example/demo/Controllers/PartiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/UsersMicroservice/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/UsersMicroservice/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/java/com/example/demo/Controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/java/com/example/demo/Controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/java/com/example/demo/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/java/com/example/demo/Services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/UsersMicroservice/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/tomasz/Java/Aplikacje-backendowe/Lab1",
+    "last_opened_file_path": "/home/tomasz/Java/Aplikacje-backendowe/Lab2",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
