@@ -26,10 +26,8 @@ public class UserEntity {
     @Column(name = "surname", nullable = true)
     private String surname;
 
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-//    @Column(name = "birthDay")
-//    @Temporal(TemporalType.DATE)
-//    private Date birthday;
+    @Column(name="type", nullable = false)
+    private String type;
 
     public long getId() {
         return id;
@@ -71,11 +69,10 @@ public class UserEntity {
         this.surname = surname;
     }
 
-//    public Date getBirthday() {
-//        return birthday;
-//    }
-//
-//    public void setBirthday(Date birthday) {
-//        this.birthday = birthday;
-//    }
+    public String getType(){
+        return this.type;
+    }
+    public void setType(String type){
+        this.type=type;
+    }
 }

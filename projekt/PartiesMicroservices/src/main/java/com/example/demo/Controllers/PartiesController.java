@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Entities.PartyEntity;
 import com.example.demo.Repositories.PartiesRepository;
+import com.example.demo.Services.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,9 @@ public class PartiesController {
     @Autowired
     private PartiesRepository partiesRepository;
 
+    @Autowired
+    private PartyService service;
+
 
     @GetMapping(
             value = "/{id}",
@@ -29,12 +33,12 @@ public class PartiesController {
     }
 
     @GetMapping(
-            value = "/",
+            value = "/all/{num}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Transactional(readOnly = true)
-    public ResponseEntity<List<PartyEntity>> getAll() {
-        return ResponseEntity.ok(this.partiesRepository.findAll());
+    public ResponseEntity<List<PartyEntity>> getAll(@PathVariable int num) {
+        return ResponseEntity.ok(this.service.getAll(num));
     }
 
     @PostMapping(

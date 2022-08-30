@@ -23,6 +23,8 @@ public class UserEntity {
     @Column(name = "surname", nullable = true)
     private String surname;
 
+    private String type;
+
     public UserEntity() {
     }
 
@@ -72,6 +74,10 @@ public class UserEntity {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getType(){
+        return this.type;
     }
 
 }

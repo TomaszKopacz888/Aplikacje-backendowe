@@ -26,7 +26,7 @@ public class AuthService {
 
     public Long getLoggedUserId(HttpSession session) {
         Object sessionAttribute=session.getAttribute("LOGGED_USER_ID");
-        if (session.getAttribute("LOGGED_USER_ID")!=null) {
+            if (session.getAttribute("LOGGED_USER_ID")!=null) {
             if (sessionAttribute instanceof Long) {
                 return (Long) sessionAttribute;
             } else if (sessionAttribute instanceof String) {
@@ -37,7 +37,7 @@ public class AuthService {
     }
 
 
-    public ActionResponse loginUser(HttpServletRequest request, UserLoginRequest data) throws NoUserException {
+    public ActionResponse loginUser(HttpServletRequest request, UserLoginRequest data) throws NullPointerException {
         HttpSession session = request.getSession();
         if (this.isUserLogged(session)) {
             return new ActionResponse(false, "You are alreatdy logged in. Please logout, and try again");
@@ -45,7 +45,10 @@ public class AuthService {
         try {
             RestTemplate rest = new RestTemplate();
             long id = rest.postForObject("http://127.0.0.1:8082/users/getIdByEmailAndPassword", data, int.class);
+            UserEntity user=rest.getForObject("http://127.0.0.1:8082/users/"+id,  UserEntity.class);
             session.setAttribute("LOGGED_USER_ID", id);
+            assert user != null;
+            session.setAttribute("LOGGED_USER_TYPE", user.getType());
             return new ActionResponse(true, "Login successful");
         } catch (Exception e) {
             return new ActionResponse(false, "Incorrect email or password");
@@ -73,5 +76,16 @@ public class AuthService {
         catch (Exception e){
             return new ActionResponse(false, "This email is already in use");
         }
+    }
+
+    public ActionResponse updateUser(HttpServletRequest request, UserEntity user) {
+        HttpSession session=request.getSession();
+        if (isUserLogged(session)){
+            RestTemplate rest=new RestTemplate();
+            user.setId((int)session.getAttribute("LOGGED_USER_ID"));
+            UserEntity restUser=rest.postForObject("http://127.0.0.1:8082/users/update", user, UserEntity.class);
+            return new ActionResponse(true, "Updating data successful");
+        }
+        else return new ActionResponse(false, "You are not logged in");
     }
 }

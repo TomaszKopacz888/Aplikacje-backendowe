@@ -2,7 +2,6 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Entities.UserEntity;
 import com.example.demo.Entities.UserLoginRequest;
-import com.example.demo.Entities.UserLoginResponse;
 import com.example.demo.Exceptions.NoUserException;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Services.UserService;

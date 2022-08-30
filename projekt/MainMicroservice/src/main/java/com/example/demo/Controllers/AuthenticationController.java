@@ -37,4 +37,9 @@ public class AuthenticationController {
     public ResponseEntity<ActionResponse> registerUser(HttpServletRequest request, @RequestBody UserEntity user){
         return ResponseEntity.ok(this.service.registerUser(request, user));
     }
+
+    @PostMapping("/updateUserData")
+    public ResponseEntity<ActionResponse> update(HttpServletRequest request, @RequestBody UserEntity user){
+        return ResponseEntity.ok(this.service.updateUser(request, user));
+    }
 }
