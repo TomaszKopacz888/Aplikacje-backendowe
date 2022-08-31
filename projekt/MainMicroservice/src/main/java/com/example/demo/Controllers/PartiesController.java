@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Entities.ActionResponse;
 import com.example.demo.Entities.PartyEntity;
+import com.example.demo.Entities.UserEntity;
 import com.example.demo.Services.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -25,15 +26,25 @@ public class PartiesController {
     }
 
     @GetMapping(value = "/{id}",
-        produces = MediaType.APPLICATION_JSON_VALUE
+            produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<PartyEntity> getById(@PathVariable Long id){
+    public ResponseEntity<PartyEntity> getById(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.getById(id));
     }
 
     @GetMapping(value = "/page/{num}",
-    produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<PartyEntity>> getAll(@PathVariable Long num){
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<PartyEntity>> getAll(@PathVariable Long num) {
         return ResponseEntity.ok(this.service.getAll(num));
     }
+
+    @PostMapping(
+            value = "/{id}/update",
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<ActionResponse> update(HttpServletRequest request, @PathVariable long id, @RequestBody PartyEntity party) {
+        party.setId(id);
+        return ResponseEntity.ok(this.service.updateParty(request, party));
+    }
 }
+

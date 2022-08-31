@@ -25,12 +25,11 @@ Do przygotowania
 6. Entities i repositories potrzebnych w projektcie +
 7. System rejestracji użytkowników +
 8. System logowania użytkowników +
-9. System zarządzania użytkownikami: dodawanie użytkownikom uprawnień typu admin
+9. System zarządzania użytkownikami: dodawanie użytkownikom uprawnień typu admin +
 10. Zarządzanie kontem użytkownika- aktualizacja danych+
 11. Opcja dodawania i usuwania z ulubionych imprez
 12. Api do pobierania dostępnych imprez w zależności od zastosowanych filtrów wyszukiwania
 13. Formularz dodawania nowych imprez+
 14. Opcja edycji dodanych imprez
-15. Warstwa wizualna
 16. Przygotowanie microservice+
 17. Przygotowanie wersji produkcyjnej

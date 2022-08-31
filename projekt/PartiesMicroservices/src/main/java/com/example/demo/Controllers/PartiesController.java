@@ -1,15 +1,18 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.Entities.ActionResponse;
 import com.example.demo.Entities.PartyEntity;
 import com.example.demo.Repositories.PartiesRepository;
 import com.example.demo.Services.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -55,15 +58,21 @@ public class PartiesController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<PartyEntity> updateParty(@PathVariable("id") Long id, @RequestBody PartyEntity party) {
+    public ActionResponse updateParty(@PathVariable("id") Long id, @RequestBody PartyEntity party) {
         Optional<PartyEntity> foundPartyOptional = this.partiesRepository.findById(id);
         if (foundPartyOptional.isPresent()) {
             PartyEntity foundPartyEntity = foundPartyOptional.get();
-            if (party.getTitle() != null) foundPartyEntity.setTitle(party.getTitle());
-            if (party.getDescription() != null) foundPartyEntity.setDescription((party.getDescription()));
-            if (party.getPictures() != null) foundPartyEntity.setPictures(party.getPictures());
-            if (party.getAddress() != null) foundPartyEntity.setAddress(party.getAddress());
+            if (Objects.equals(party.getUserId(), foundPartyEntity.getUserId())) {
+                if (party.getTitle() != null) foundPartyEntity.setTitle(party.getTitle());
+                if (party.getDescription() != null) foundPartyEntity.setDescription((party.getDescription()));
+                if (party.getPictures() != null) foundPartyEntity.setPictures(party.getPictures());
+                if (party.getAddress() != null) foundPartyEntity.setAddress(party.getAddress());
+                this.partiesRepository.save(foundPartyEntity);
+                return new ActionResponse(true, "Update successful");
+            }
+            return new ActionResponse(false, "This party has different owner");
         }
-        return ResponseEntity.of(foundPartyOptional);
+        return new ActionResponse(false, "Party by id is not exist");
+
     }
 }

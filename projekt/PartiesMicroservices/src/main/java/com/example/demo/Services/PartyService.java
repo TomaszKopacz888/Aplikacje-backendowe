@@ -16,8 +16,7 @@ public class PartyService {
     @Autowired
     private PartiesRepository repository;
     public List<PartyEntity> getAll(int num){
-        int start= (num-1)*20;
-        Pageable p= PageRequest.of(start, 10);
+        Pageable p= PageRequest.of(num-1, 10);
         Page<PartyEntity> pe= this.repository.findAll(p);
         return pe.getContent();
     }

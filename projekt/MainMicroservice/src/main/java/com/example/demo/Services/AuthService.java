@@ -82,10 +82,12 @@ public class AuthService {
         HttpSession session=request.getSession();
         if (isUserLogged(session)){
             RestTemplate rest=new RestTemplate();
-            user.setId((int)session.getAttribute("LOGGED_USER_ID"));
-            UserEntity restUser=rest.postForObject("http://127.0.0.1:8082/users/update", user, UserEntity.class);
+            long id=(long)session.getAttribute("LOGGED_USER_ID");
+            user.setId(id);
+            UserEntity restUser=rest.postForObject("http://127.0.0.1:8082/users/"+id+"/update", user, UserEntity.class);
             return new ActionResponse(true, "Updating data successful");
         }
         else return new ActionResponse(false, "You are not logged in");
     }
+
 }

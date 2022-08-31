@@ -2,26 +2,17 @@ package com.example.demo.Entities;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "parties")
 public class PartyEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "title", nullable = false, unique = true)
     private String title;
 
-    @Column(name = "description", nullable = true)
     private String description;
 
-    @Column(name = "pictures", nullable = true)
     private String pictures;
 
-    @Column(name = "address", nullable = true)
     private String address;
 
-    @Column(name = "user", nullable = false)
     private Long userId;
 
     public long getId() {

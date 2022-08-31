@@ -1,5 +1,6 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.Entities.AdminId;
 import com.example.demo.Entities.UserEntity;
 import com.example.demo.Entities.UserLoginRequest;
 import com.example.demo.Exceptions.NoUserException;
@@ -67,5 +68,24 @@ public class UsersController {
             this.repository.save(foundUserEntity);
         }
         return ResponseEntity.of(foundUserOptional);
+    }
+    @PostMapping(
+            value = "/makeAdmin",
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+    public boolean setUserAdmin(@RequestBody AdminId id){
+        try {
+            Optional<UserEntity> foundUserOptional=this.repository.findById(id.getId());
+            if (foundUserOptional.isPresent()) {
+                UserEntity user = foundUserOptional.get();
+                user.setType("ADMIN");
+                this.repository.save(user);
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 }
