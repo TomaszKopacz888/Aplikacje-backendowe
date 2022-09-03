@@ -15,6 +15,4 @@ public interface PartiesRepository extends JpaRepository<PartyEntity, Long> {
 
     Page<PartyEntity> findAll(Pageable pageable);
     Optional<PartyEntity>  findById(Long id);
-
-
 }
