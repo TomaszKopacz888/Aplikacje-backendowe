@@ -24,8 +24,7 @@ public class PartiesController {
     @Autowired
     private PartiesRepository partiesRepository;
 
-    @Autowired
-    private FavouriteRepository favouriteRepository;
+
 
     @Autowired
     private PartyService service;
@@ -80,23 +79,5 @@ public class PartiesController {
         return new ActionResponse(false, "Party by id is not exist");
 
     }
-//TODO: FAVOURITE
-    @PostMapping(
-            value = "/favourite/add",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<FavouriteEntity> addFavourite(@RequestBody FavouriteEntity favourite) {
-            return ResponseEntity.ok(this.favouriteRepository.save(favourite));
-        }
 
-    @PostMapping(
-            value = "/favourite/get",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    @Transactional(readOnly = true)
-    public ResponseEntity<Optional<FavouriteEntity>> getFavourite(@RequestBody long userId) {
-        return ResponseEntity.ok(this.favouriteRepository.findById(userId));
-    }
 }

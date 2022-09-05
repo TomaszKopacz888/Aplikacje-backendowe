@@ -3,16 +3,16 @@ package com.example.demo.Entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "favourite")
+@Table(name = "favourites")
 public class FavouriteEntity {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "userId", nullable = false)
+    @Column(name = "user", nullable = false)
     private long userId;
-    @Column(name = "partyId", nullable = false)
+    @Column(name = "party", nullable = false)
     private long partyId;
 
     public FavouriteEntity() {
