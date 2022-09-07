@@ -37,7 +37,11 @@ public class FavouritesController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Transactional(readOnly = true)
-    public ResponseEntity<List<FavouriteEntity>> getFavourite(@RequestBody FavouriteEntity userId) {
-        return ResponseEntity.ok(this.favouriteRepository.findAllByUserId(userId.getUserId()));
+//    public ResponseEntity<List<FavouriteEntity>> getFavourite(@RequestBody FavouriteEntity userId) {
+//        return ResponseEntity.ok(this.favouriteRepository.findAllByUserId(userId.getUserId()));
+//    }
+    public List<FavouriteEntity> getFavourite(@RequestBody FavouriteEntity userId){
+        return this.favouriteRepository.findAllByUserId(userId.getUserId());
     }
+
 }
