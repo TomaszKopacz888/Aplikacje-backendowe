@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface FavouriteRepository extends JpaRepository<FavouriteEntity, Long> {
 
     List<FavouriteEntity> findAllByUserId(Long userId);
+    FavouriteEntity findByUserIdAndPartyId(Long userId, Long partyId);
 }

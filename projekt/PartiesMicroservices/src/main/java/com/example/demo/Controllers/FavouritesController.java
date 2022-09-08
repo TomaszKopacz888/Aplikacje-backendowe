@@ -1,5 +1,6 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.Entities.ActionResponse;
 import com.example.demo.Entities.FavouriteEntity;
 import com.example.demo.Repositories.FavouriteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +45,15 @@ public class FavouritesController {
         return this.favouriteRepository.findAllByUserId(userId.getUserId());
     }
 
+
+    @PostMapping(
+            value = "/compare",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ActionResponse getByUserIdAndPartyId(@RequestBody FavouriteEntity fav){
+        FavouriteEntity favResponse=this.favouriteRepository.findByUserIdAndPartyId(fav.getUserId(), fav.getPartyId());
+        if (favResponse==null) return  new ActionResponse(false, "No favourites");
+        return new ActionResponse(true, "Success!");
+    }
 }
