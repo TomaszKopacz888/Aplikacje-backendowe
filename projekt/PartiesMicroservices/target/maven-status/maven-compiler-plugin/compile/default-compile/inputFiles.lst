@@ -1,0 +1,9 @@
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Controllers/PartiesController.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Entities/ActionResponse.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Services/PartyService.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Controllers/FavouritesController.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Repositories/FavouriteRepository.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/AppApplication.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Entities/FavouriteEntity.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Entities/PartyEntity.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/PartiesMicroservices/src/main/java/com/example/demo/Repositories/PartiesRepository.java

@@ -70,7 +70,7 @@ public class AuthService {
             RestTemplate rest=new RestTemplate();
             if (user.getEmail()==null) return new ActionResponse(false, "You must enter your email");
             if (user.getPassword()==null) return new ActionResponse(false, "You must enter your password");
-            Object user2=rest.postForObject("http://127.0.0.1:8082/users/create", user, Object.class);
+            UserEntity user2=rest.postForObject("http://127.0.0.1:8082/users/create", user, UserEntity.class);
             return new ActionResponse(true, "Registration successful");
         }
         catch (Exception e){
