@@ -3,6 +3,7 @@
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Controllers/FavouriteController.java
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Exceptions/NoUserException.java
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Entities/FavouriteEntity.java
+/home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Entities/FavouritesList.java
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/AppApplication.java
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Services/FavouriteService.java
 /home/tomasz/Java/Aplikacje-backendowe/projekt/MainMicroservice/src/main/java/com/example/demo/Services/AdminService.java

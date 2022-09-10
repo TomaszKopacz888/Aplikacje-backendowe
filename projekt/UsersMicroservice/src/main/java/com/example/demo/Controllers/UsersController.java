@@ -33,7 +33,7 @@ public class UsersController {
     //curl -X POST -H "Content-Type: application/json" -d '{"email":"example@email.com", "password":"password"}' http://127.0.0.1:8082/users/getIdByEmailAndPassword
     @PostMapping(value = "/getIdByEmailAndPassword")
 
-        public long createUser(@RequestBody UserLoginRequest data) throws NoUserException {
+        public long getUserByEmailAndPassword(@RequestBody UserLoginRequest data) throws NoUserException {
             try {
 
                 return service.getUsersIdByEmailAndPassword(data);

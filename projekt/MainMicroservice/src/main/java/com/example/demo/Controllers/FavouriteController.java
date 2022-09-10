@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Entities.ActionResponse;
 import com.example.demo.Entities.FavouriteEntity;
+import com.example.demo.Entities.PartyEntity;
 import com.example.demo.Services.FavouriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,7 +25,7 @@ public class FavouriteController {
     @GetMapping(value = "/get",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<FavouriteEntity>> getFavourite(HttpServletRequest request) {
+    public ResponseEntity<List<PartyEntity>> getFavourite(HttpServletRequest request) {
         return ResponseEntity.ok(this.service.get(request));
     }
 
